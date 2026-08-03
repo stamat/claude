@@ -67,6 +67,34 @@ with the reason.
 The test is the spec. Never weaken, skip or delete one to make it pass; if the test itself
 is wrong, say so and let me decide.
 
+# Defensive engineering
+
+Assume the input is hostile, the platform is different, and the caller got it wrong. Not
+paranoia — these are the bugs that come back.
+
+- **Escape at the boundary, in a named helper, once.** Not at each call site where one will
+  eventually be forgotten. Interpolating into an HTML attribute escapes `&` and `"`;
+  inlining into `<script>`/`<style>` neutralises the closing tag, because a `</script>` in
+  the payload ends the tag it sits in and nothing warns you.
+- **User input never touches a shell.** Argument arrays, not string concatenation. A
+  quoted-string command is one apostrophe away from being someone else's command.
+- **Bound anything unbounded.** Log buffers, retries, loops fed by a caller. A cap with a
+  documented number beats a leak nobody notices until it is a hang.
+- **Never trust the platform to match yours.** Build paths with the path module, normalise
+  separators before anything reaches a URL, a glob or emitted output, and let CI run on the
+  OS you do not use. A backslash leaking into a sitemap is the bug that keeps coming back.
+- **Validate at the trust boundary, then trust internally.** One place, not defensively
+  re-checked at every layer — that is noise, and it hides which layer actually owns it.
+- **State the threat model, including where it does not hold.** An iframe with no `sandbox`
+  is right for prose I wrote and wrong for samples arriving in a URL. Write that down in
+  CONTRIBUTING.md rather than leaving it as something I happen to know.
+- **Fail loud, or degrade honestly. Never silently wrong.** A crash is debuggable; a wrong
+  answer that looks right is not.
+- **The escaping test is the one that pays.** `'a url with a quote in it cannot close the
+  attribute it sits in'`, `'a closing tag inside a pane cannot end the tag it is inlined
+  into'` — write them, name them like that, and they document the attack while proving the
+  fix.
+
 # Frontend
 
 Anything that renders HTML. **Accessibility, SEO and GEO are one job, not three** — a
