@@ -5,26 +5,10 @@ Prefer Serbian Latin (`sr-Latn`) over Croatian, Ekavian forms — *primer* not *
 
 # How I write
 
-READMEs, changelogs, docs, blog posts:
-
-- **Honestly, above every rule below.** Say what the thing does not do and where it loses,
-  in the document that sells it. Never a claim I have not checked: not measured is
-  *calibrated*, not run is *not run*, skipped is *skipped, because*. A doc that oversells is
-  a bug report arriving later with someone's afternoon gone.
-- **Declarative. No hedging, no asking permission.** State the thing, let the reasoning
-  follow — but state uncertainty as plainly as the claim.
-- **Lead with the failure, not the feature.** The bug that returns no error is the
-  interesting part.
-- **Motivation before mechanism.** Why anyone would want this, never what it is.
-- **A colon introduces the reason; an em dash carries the qualification.**
-- **Concrete anecdote beats abstract claim.** "That one shipped once, hence the jsdom half."
-- **Address one reader with one problem.**
-- **Tables argue** — what each option costs, including when to use something other than mine.
-- **No bullshit.** `poops` bills itself a "no-bullshit bundler"; that is the register.
-
-Humor is dark and scatological, load-bearing in the naming — `poops`, `shitstorm`,
-`septic`, `laxative`, `💩` as a bin alias. Do not sanitize it; do not manufacture it — it
-works as the honest name for a thing, and reads try-hard bolted on.
+Honestly, above all: never a claim I have not checked — not run is *not run*, skipped is
+*skipped, because*. Every comparison is a table, in docs and in replies to me alike — a row
+per option with its pro, its con, its cost. The full voice for READMEs, changelogs, docs and
+blog posts: `skills/how-i-write` in <https://github.com/stamat/claude>.
 
 # My repositories
 
@@ -36,6 +20,26 @@ Mine live at <https://github.com/stamat>. A repo named bare — `poops`, `templa
 One line, lowercase, saying what changed: `fix the safari stutter`. No Conventional Commits
 prefix, no scope in parentheses, no body unless I ask. This overrides any skill that reaches
 for Conventional Commits.
+
+# Reporting back
+
+The message closing a turn is a receipt, not a report: **what changed, why, and what was
+decided against.** A few lines for ordinary work — length tracks the size of the change,
+never the effort spent on it.
+
+- **Lead with the change, then the context and the reason.** "Escaping moved into
+  `escapeAttr` so no call site can forget it" — never a walk through how I found it.
+- **The decision is the only part the diff cannot show.** Which alternative lost and on what
+  cost, what was skipped and when it becomes worth adding, which assumption I made where the
+  ask was ambiguous. Unwritten, it dies with the turn.
+- **Honesty rule as everywhere:** not run is *not run*, unverified is *unverified*, scope
+  left out is named with its reason. A green summary over a skipped test is the same bug as
+  a README that oversells.
+- **No process narration, no "Summary:" heading, no replay of the plan**, no closing offer
+  of further help. Paths and symbols in backticks, one line per bullet, headings only past
+  the point prose stops scanning.
+- **End finished.** Anything needing my call is one question at the end, not an invitation
+  to keep the conversation going.
 
 # Design philosophy
 
@@ -85,45 +89,10 @@ feature failing any of the following is not needed, however cleanly it could be 
 # Before building
 
 **Settle whether a thing should exist before building it.** A question from me is a
-question, not approval. I ask "do we need this?" more often than "is this correct?" — answer
-that one first, in the same reply, before there is code to defend.
-
-Then work the checklist, stopping at the first "no". Most ideas die at step 1; that is the
-checklist working, not failing.
-
-1. **What already exists?** Assume it has been built and go find who built it — platform and
-   stdlib first, then the ecosystem. **Cite what you find, a URL per fact, never from
-   memory**: if you did not open it, you do not know it. Note what they call it, too — a
-   feature inventing fresh vocabulary for something already named is a feature nobody finds.
-   Searching is the step, not a formality before it.
-
-   **Novelty is not the test.** Most of what I build is a better-fitting version of
-   something that exists; `poops` is one of many bundlers. Finding nothing is no green
-   light — the first possibility is nobody wanted it, and you must say why they were wrong.
-2. **What distinct value would mine add?** The gate. Not "do they have this too" but **what
-   does a user get from theirs, and what would they get from mine that they cannot get
-   there?** Two tools ship the same bullet and deliver opposite value. Simpler,
-   better-fitting, or mine to own rather than wait on, are all real answers.
-
-   So is **"it exists but does not meet my standards"** — in practice my most common one. A
-   package that works but drags twelve transitive dependencies, exposes an imperative API
-   where a declarative one would do, or cannot reach *done* because it is a framework
-   fragment, fails the philosophy however well it runs. `argoyle` and
-   `marked-github-footnote` are both this.
-
-   The guard, since that answer can rationalise rebuilding anything: **name the standard it
-   breaks and what the break costs.** "Twelve transitive dependencies I am on the hook for"
-   is a cost; "I would have named it differently" is taste, and taste is not a reason to
-   maintain a package for years. I count as a user — "it costs me less to hold in my head"
-   is real, provided I can say what the load was.
-
-   Say the difference in one sentence. **If you cannot, there is none — do not build it.**
-   "They already do this well" is a complete answer; then say so in the README and send
-   people there. Know the alternatives well enough to recommend them: a table that only
-   flatters mine is a table nobody believes.
-3. **Does it fit what the project refuses to become?** CONTRIBUTING.md says. Before, not
-   after.
-4. **Still yes?** Build the smallest version that works.
+question, not approval — answer "do we need this?" first, in the same reply, before there is
+code to defend. The checklist that decides, prior art through distinct value to refusals:
+`skills/before-building` in <https://github.com/stamat/claude>. Run it before any new
+feature, option, package or project.
 
 # Standards
 
@@ -214,27 +183,9 @@ paranoia — these are the bugs that come back.
 
 # Frontend
 
-Anything that renders HTML. **Accessibility, SEO and GEO are one job** — a screen reader, a
-crawler and an agent are all non-visual consumers of the same structure. Build for that
-reader and the other two follow; build for sighted humans only and all three fail together.
-
-- **Semantic HTML first, roles second.** The right element, not a `div` with a role bolted
-  on. A role is for when no element says it, never a substitute for one that does.
-- **Names, not decoration.** Every control has an accessible name saying what it does; markup
-  carrying its own `aria-label` outranks any default I generate.
-- **Keyboard is not optional.** Reachable, operable, no traps. Say what a key does where the
-  user is, not in a legend elsewhere.
-- **Heading hierarchy is the document outline**, and how every machine reader navigates. Do
-  not pick a level for its size.
-- **Landmarks and one `<main>`**, skip links where the nav is long.
-- **SEO is metadata plus structure**: title, description, canonical, Open Graph, sitemap, and
-  headings that describe rather than tease.
-- **GEO is being quotable.** Generate `llms.txt` — poops does it natively. Content must
-  survive extraction: state the fact in the sentence, not in the design.
-- **Structured data where it is true.** Schema.org for what a page genuinely is — a lie in
-  JSON-LD is a lie that ranks.
-- **Degrade honestly**, as everywhere: no JS, no webfont, no CSS, the page still reads —
-  which is also what makes it cheap for an agent to parse.
+Anything that renders HTML serves three non-visual readers at once — screen reader, crawler,
+agent; build for them and the sighted reader follows. The rules, semantics through SEO and
+GEO: `skills/frontend` in <https://github.com/stamat/claude>.
 
 # New projects
 

@@ -16,6 +16,28 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+### Added
+
+- **Reporting back** — the message closing a turn is a receipt, not a report: what changed,
+  why, and what was decided against, length tracking the size of the change. No process
+  narration, no summary headings, honesty rule throughout; anything needing a call is one
+  question at the end.
+
+### Changed
+
+- **Voice, the before-building checklist and the frontend rules moved out of `CLAUDE.md`
+  into skills** — [skills/how-i-write](skills/how-i-write),
+  [skills/before-building](skills/before-building), [skills/frontend](skills/frontend).
+  A behaviour change in both directions: every session drops ~1.1k tokens of always-on
+  context, and those three sections now apply only when the skill triggers — a session
+  Claude does not read as docs-writing or frontend work runs without them. `CLAUDE.md`
+  keeps a one-line kernel of each with a pointer. Codex loads no skills; it gets the
+  kernels and a path it must open itself.
+- **The tables rule now covers replies, not only docs** — every comparison is a table: a
+  row per option with its pro, its con, its cost; against competitors a row per feature,
+  losing rows included. Stated in the `CLAUDE.md` kernel so it acts every session, in full
+  in `skills/how-i-write`.
+
 ## [1.3.0] — 2026-08-03
 
 ### Added

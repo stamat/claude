@@ -34,8 +34,11 @@ linked. Re-running after a pull is a no-op.
 
 | | |
 | --- | --- |
-| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo — ~3.3k tokens of context each time. Voice, commits, tests, how I build, design philosophy, standards. |
+| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo — ~2.6k tokens of context each time. Commits, tests, how I build, design philosophy, standards: the doctrine that must act unprompted. |
 | [skills/keystone](skills/keystone) | Comment doctrine — what earns a comment when the reader is an agent. |
+| [skills/how-i-write](skills/how-i-write) | House voice for READMEs, changelogs, docs and blog posts. |
+| [skills/before-building](skills/before-building) | The checklist that settles whether a thing should exist. |
+| [skills/frontend](skills/frontend) | Accessibility, SEO and GEO as one job, for anything rendering HTML. |
 | [skills/changelog-entry](skills/changelog-entry) | Drafts a Keep a Changelog `[Unreleased]` entry from the diff. |
 | [skills/release](skills/release) | Preflight, then hands off to `script/publish`. |
 | [settings.json](settings.json) | Permissions, hooks, statusline, enabled plugins. |
@@ -76,6 +79,13 @@ across my machines, needs editing on yours.
 The density numbers in `keystone` are calibrated against real repos, not measured against
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct
 mechanically.
+
+Three sections of the doctrine — voice, the before-building checklist, frontend — live in
+skills and load only when the task looks like theirs. That is the trade: ~1.1k tokens off
+every session, bought with recall risk — a session Claude does not recognise as docs-writing
+or frontend work runs without those rules. `CLAUDE.md` keeps a one-line kernel of each so
+the always-on part survives. Codex loads no skills at all; it gets the kernels and a path it
+must choose to open.
 
 The Codex link follows [OpenAI's documented discovery](https://github.com/openai/codex/blob/main/docs/agents_md.md),
 but no live Codex has read it yet on my machines — unverified until
