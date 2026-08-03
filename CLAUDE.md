@@ -91,8 +91,22 @@ zero dependencies, and a scope small enough to finish.
 
 # Design philosophy
 
-Check a proposed feature against this before asking whether to build it. A thing that fails
-here is not needed, however cleanly it could be written.
+**Make the smallest functional wholes that deserve to exist.** Everything below is
+downstream of that sentence, and each of the three parts is load-bearing:
+
+- **Smallest** — no speculative scope, no options nobody asked for. Cut until cutting more
+  would break it.
+- **Functional whole** — it stands on its own and does its job end to end. A fragment that
+  only makes sense inside a framework is not one, and neither is a thing so broad it can
+  never be finished. Whole is what makes *done* reachable.
+- **Deserves to exist** — earned against what is already out there, on value rather than on
+  novelty. See the checklist under Standards.
+
+*Smallest* on its own produces fragments; *whole* on its own produces bloat. The pair is
+the constraint.
+
+Check a proposed feature against the rest of this before asking whether to build it. A
+thing that fails here is not needed, however cleanly it could be written.
 
 - **Inherit context, do not replace it.** Wrap what the user already has rather than asking
   them to port into my world — upgrade the `<pre><code>` the generator emitted, take a
@@ -128,21 +142,28 @@ they live.
 
 **Before building a feature**
 
-1. **Is it novel? Find out before designing anything.** Assume it has been built already and
-   go looking for who built it — the platform or the stdlib first, since that is the
+1. **What already exists? Find out before designing anything.** Assume it has been built
+   and go looking for who built it — the platform or the stdlib first, since that is the
    cheapest way for a thing to already exist, then the ecosystem. **Cite what you find, a
    URL per fact, never from memory.** If you did not open it, you do not know it. Note what
    they call it too: a feature that invents fresh vocabulary for something already named is
    a feature nobody finds. Searching is the step, not a formality before the step.
-2. **If it exists, what distinct value would mine add?** Judge on value, never on features —
-   the question is not "do they have this too" but **what does a user actually get from
-   theirs, and what would they get from mine that they cannot get there?** Two tools ship
-   the same bullet and deliver opposite value. Say the difference in one sentence. **If you
-   cannot, there is none — do not build it.** "They already do this well" is a complete and
-   correct answer; the move is to say so in the README and send people there. Know the
-   alternatives well enough to recommend them — a table that only flatters mine is a table
-   nobody believes, and being trusted about where mine loses is what makes the rest of the
-   page credible.
+
+   **Novelty is not the test and never was.** Most of what I build is a better-fitting
+   version of something that exists — `poops` is one of many bundlers, and that is the
+   normal case, not a concession. Finding nothing is not a green light either: if nobody
+   has built it, the first possibility is that nobody wanted it, and you now have to say
+   why they were wrong.
+2. **What distinct value would mine add?** This is the gate. Judge on value, never on
+   features — the question is not "do they have this too" but **what does a user actually
+   get from theirs, and what would they get from mine that they cannot get there?** Two
+   tools ship the same bullet and deliver opposite value. Simpler, better-fitting, or mine
+   to own rather than wait on, are all real answers. Say the difference in one sentence.
+   **If you cannot, there is none — do not build it.** "They already do this well" is a
+   complete and correct answer; the move is to say so in the README and send people there.
+   Know the alternatives well enough to recommend them — a table that only flatters mine is
+   a table nobody believes, and being trusted about where mine loses is what makes the rest
+   of the page credible.
 3. **Does it fit what the project refuses to become?** CONTRIBUTING.md says. Check before
    building, not after.
 4. **Still yes?** Build the smallest version that works.
