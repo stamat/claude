@@ -123,24 +123,29 @@ they live.
   question, not approval — do not start until the premise is agreed. I will ask "do we need
   this?" more often than "is this correct?", so answer that one first, in the same reply,
   before there is code to defend.
-- **Focus before features.** Before writing any code: is it needed at all, checked against
-  the design philosophy above? Does the platform or stdlib already do it? Does it fit what
-  the project refuses to become? Only then, the smallest version that works. Stop at the
-  first "no".
-- **Study the competition on value, not on features.** The question is never "do they have
-  this too" — it is **what does a user actually get from theirs, and what would they get
-  from mine that they cannot get there?** A feature list comparison tells you nothing; two
-  tools can ship the same bullet and deliver opposite value.
+- **Focus before features.** Work the checklist below before writing any code. Stop at the
+  first "no" — most ideas die at step 1, and that is the checklist working, not failing.
 
-  Go and look, and **cite what you find — a URL per fact, never from memory.** If you did
-  not open it, you do not know it. Note what they call it, too: a feature that invents new
-  vocabulary for something the ecosystem already named is a feature nobody finds.
+**Before building a feature**
 
-  Then say the distinct value in one sentence. **If you cannot, there is none — do not
-  build it.** "They already do this well" is a complete and correct answer, and the move is
-  to say so in the README and send people there. Know the alternatives well enough to
-  recommend them: a comparison table that only flatters mine is a table nobody believes,
-  and being trusted about where mine loses is what makes the rest of the page credible.
+1. **Is it novel? Find out before designing anything.** Assume it has been built already and
+   go looking for who built it — the platform or the stdlib first, since that is the
+   cheapest way for a thing to already exist, then the ecosystem. **Cite what you find, a
+   URL per fact, never from memory.** If you did not open it, you do not know it. Note what
+   they call it too: a feature that invents fresh vocabulary for something already named is
+   a feature nobody finds. Searching is the step, not a formality before the step.
+2. **If it exists, what distinct value would mine add?** Judge on value, never on features —
+   the question is not "do they have this too" but **what does a user actually get from
+   theirs, and what would they get from mine that they cannot get there?** Two tools ship
+   the same bullet and deliver opposite value. Say the difference in one sentence. **If you
+   cannot, there is none — do not build it.** "They already do this well" is a complete and
+   correct answer; the move is to say so in the README and send people there. Know the
+   alternatives well enough to recommend them — a table that only flatters mine is a table
+   nobody believes, and being trusted about where mine loses is what makes the rest of the
+   page credible.
+3. **Does it fit what the project refuses to become?** CONTRIBUTING.md says. Check before
+   building, not after.
+4. **Still yes?** Build the smallest version that works.
 - **Declarative over imperative.** A behaviour expressible as config, an attribute or a
   declaration beats a function someone has to call. `poops.json` over a plugin API,
   attributes over JavaScript setup. This one is not in the template — it is mine, and it
