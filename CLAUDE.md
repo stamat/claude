@@ -31,6 +31,8 @@ Prose in my repos — READMEs, changelogs, docs, blog posts — sounds like this
 - **Address one reader with one problem**, directly.
 - **Tables argue.** A comparison table says what each option costs, including when to use
   something other than mine.
+- **No bullshit.** `poops` bills itself as a "no-bullshit bundler"; that is the register for
+  the work as much as the prose.
 
 Humor is dark and scatological, and it is load-bearing in the naming already — `poops`,
 `shitstorm`, `septic`, `laxative`, `💩` as a bin alias, "Fucking awesome, right?" in
@@ -50,6 +52,126 @@ parentheses. Lowercase, and say what changed: `fix the safari stutter`, `add shi
 the demo page`. No body unless I ask for one.
 
 This overrides any skill or default that reaches for Conventional Commits.
+
+# Design philosophy
+
+**Make the smallest functional wholes that deserve to exist.** Everything below is
+downstream of that sentence, and each of the three parts is load-bearing:
+
+- **Smallest** — no speculative scope, no options nobody asked for. Cut until cutting more
+  would break it.
+- **Functional whole** — it stands on its own and does its job end to end. A fragment that
+  only makes sense inside a framework is not one, and neither is a thing so broad it can
+  never be finished. Whole is what makes *done* reachable.
+- **Deserves to exist** — earned against what is already out there, on value not novelty.
+
+*Smallest* alone produces fragments; *whole* alone produces bloat. The pair is the
+constraint.
+
+A feature fails here is not needed, however cleanly it could be written:
+
+- **Inherit context, do not replace it.** Wrap what the user already has rather than asking
+  them to port into my world — upgrade the `<pre><code>` the generator emitted, take a
+  config file rather than expose a plugin API, live in the light DOM so the host page's
+  theme and prose styles still reach in. Nothing gets sealed off that does not have to be.
+- **Degrade honestly.** Every dependency has a defined behaviour when absent: no
+  highlighter means monochrome, a missing optional peer warns and skips, no script at all
+  means a plain code block. Never a hard crash, and never a silent lie.
+- **One source of truth.** The sample *is* the documentation, the config *is* the state.
+  If two things can drift apart, that is the bug.
+- **Isolate only where isolation is genuinely required** — and pay for it knowingly. An
+  iframe because a CSS sample would otherwise restyle the docs page, yes; a shadow root
+  that costs the page's own theme, no.
+- **Defined by refusal.** What it will not become is stated up front, in CONTRIBUTING.md,
+  and checked before building rather than after.
+- **Declarative surface over imperative.** Attributes, config, declarations — not functions
+  to call in the right order. `poops.json` over a plugin API. Mine since 2013.
+
+# Before building
+- **Settle whether a thing should exist before building it.** A question from me is a
+  question, not approval — do not start until the premise is agreed. I will ask "do we need
+  this?" more often than "is this correct?", so answer that one first, in the same reply,
+  before there is code to defend.
+
+Stop at the first "no". Most ideas die at step 1; that is the checklist working, not
+failing.
+
+1. **What already exists? Find out before designing anything.** Assume it has been built
+   and go looking for who built it — the platform or the stdlib first, since that is the
+   cheapest way for a thing to already exist, then the ecosystem. **Cite what you find, a
+   URL per fact, never from memory.** If you did not open it, you do not know it. Note what
+   they call it too: a feature that invents fresh vocabulary for something already named is
+   a feature nobody finds. Searching is the step, not a formality before the step.
+
+   **Novelty is not the test and never was.** Most of what I build is a better-fitting
+   version of something that exists — `poops` is one of many bundlers, and that is the
+   normal case, not a concession. Finding nothing is not a green light either: if nobody
+   has built it, the first possibility is that nobody wanted it, and you now have to say
+   why they were wrong.
+2. **What distinct value would mine add?** This is the gate. Judge on value, never on
+   features — the question is not "do they have this too" but **what does a user actually
+   get from theirs, and what would they get from mine that they cannot get there?** Two
+   tools ship the same bullet and deliver opposite value. Simpler, better-fitting, or mine
+   to own rather than wait on, are all real answers.
+
+   **So is "it exists but does not meet my standards"** — in practice my most common one. A
+   package that works but drags twelve transitive dependencies, or exposes an imperative
+   API where a declarative one would do, or cannot reach *done* because it is a framework
+   fragment, fails the design philosophy however well it runs. `argoyle` and
+   `marked-github-footnote` are both this: crowded domains where the zero-dependency
+   version was not there.
+
+   The guard, because this answer can rationalize rebuilding anything: **name the standard
+   it breaks and the cost that break puts on a user.** "Twelve transitive dependencies I
+   would be on the hook for" is a cost. "I would have named it differently" is taste, and
+   taste is not a reason to maintain a package for years.
+
+   Say the difference in one sentence.
+   **If you cannot, there is none — do not build it.** "They already do this well" is a
+   complete and correct answer; the move is to say so in the README and send people there.
+   Know the alternatives well enough to recommend them — a table that only flatters mine is
+   a table nobody believes, and being trusted about where mine loses is what makes the rest
+   of the page credible.
+3. **Does it fit what the project refuses to become?** CONTRIBUTING.md says. Check before
+   building, not after.
+4. **Still yes?** Build the smallest version that works.
+
+# Standards
+
+These hold in every repo of mine, whether or not it has an `AGENTS.md` — that file is
+optional, and where it exists it carries only what is specific to that project (its layout,
+its traps, its own "ask first"). Do not restate the standing rules there; this file is where
+they live.
+
+- **Native and stdlib first. Root cause over symptom. Delete dead code** — git
+  remembers, so no commented-out blocks and no "for later" exports.
+- **Document in the same change as the code**, in the page that already covers it. A doc
+  nobody asked for is a doc nobody maintains.
+- **Never** weaken, skip or delete a test to make it pass; never edit a generated
+  directory; never bump a version or publish — a tag does that.
+- **Ask first** on a public API change, a new dependency, or a config format change.
+
+# How I build
+
+Bottom up. The primitive first, then the thing standing on it — and the primitive gets
+**extracted from a wall I actually hit**, never guessed at in advance.
+
+**Stable leaves, volatile trunk.** Leaves are low-level packages in domains that do not
+move — ANSI codes, CLI argument parsing, GFM footnote rendering. They take **zero
+dependencies, or only ones from my own ecosystem**, which is what lets them reach *done*
+and stay there. Trunks are the integrators — `poops`, `code-preview-element` — riding
+esbuild, sass, codejar, browser APIs. Churn belongs there, not in a leaf.
+
+I own the low level so I am never waiting on someone else's maintainer. Writing the code is
+a bounded cost paid once; waiting on an upstream merge is unbounded latency I cannot plan
+around.
+
+**Coupling across my repos is an accepted cost, not a problem to design away.** Propagating
+a change through the ecosystem is cheap now. The part that still needs help is *noticing* a
+downstream break — so raise that, don't raise the coupling itself.
+
+So: when something is missing, ask whether it is a leaf. If it is, it wants its own repo,
+zero dependencies, and a scope small enough to finish.
 
 # Code style
 
@@ -130,138 +252,8 @@ together.
   State the fact in the sentence, not in the design.
 - **Structured data where it is true.** Schema.org for the things a page genuinely is. Not
   as a trick — a lie in JSON-LD is a lie that ranks.
-- **Degrade honestly here too.** No JS, no webfont, no CSS: the page still reads. That is
-  the same rule as everywhere else, and it is what makes a page cheap for an agent to
-  parse.
-
-# How I build
-
-Bottom up. The primitive first, then the thing standing on it — and the primitive gets
-**extracted from a wall I actually hit**, never guessed at in advance.
-
-**Stable leaves, volatile trunk.** Leaves are low-level packages in domains that do not
-move — ANSI codes, CLI argument parsing, GFM footnote rendering. They take **zero
-dependencies, or only ones from my own ecosystem**, which is what lets them reach *done*
-and stay there. Trunks are the integrators — `poops`, `code-preview-element` — riding
-esbuild, sass, codejar, browser APIs. Churn belongs there, not in a leaf.
-
-I own the low level so I am never waiting on someone else's maintainer. Writing the code is
-a bounded cost paid once; waiting on an upstream merge is unbounded latency I cannot plan
-around.
-
-**Coupling across my repos is an accepted cost, not a problem to design away.** Propagating
-a change through the ecosystem is cheap now. The part that still needs help is *noticing* a
-downstream break — so raise that, don't raise the coupling itself.
-
-So: when something is missing, ask whether it is a leaf. If it is, it wants its own repo,
-zero dependencies, and a scope small enough to finish.
-
-# Design philosophy
-
-**Make the smallest functional wholes that deserve to exist.** Everything below is
-downstream of that sentence, and each of the three parts is load-bearing:
-
-- **Smallest** — no speculative scope, no options nobody asked for. Cut until cutting more
-  would break it.
-- **Functional whole** — it stands on its own and does its job end to end. A fragment that
-  only makes sense inside a framework is not one, and neither is a thing so broad it can
-  never be finished. Whole is what makes *done* reachable.
-- **Deserves to exist** — earned against what is already out there, on value rather than on
-  novelty. See the checklist under Standards.
-
-*Smallest* on its own produces fragments; *whole* on its own produces bloat. The pair is
-the constraint.
-
-Check a proposed feature against the rest of this before asking whether to build it. A
-thing that fails here is not needed, however cleanly it could be written.
-
-- **Inherit context, do not replace it.** Wrap what the user already has rather than asking
-  them to port into my world — upgrade the `<pre><code>` the generator emitted, take a
-  config file rather than expose a plugin API, live in the light DOM so the host page's
-  theme and prose styles still reach in. Nothing gets sealed off that does not have to be.
-- **Declarative surface.** Attributes, config, declarations — not functions to call in the
-  right order.
-- **Degrade honestly.** Every dependency has a defined behaviour when absent: no
-  highlighter means monochrome, a missing optional peer warns and skips, no script at all
-  means a plain code block. Never a hard crash, and never a silent lie.
-- **One source of truth.** The sample *is* the documentation, the config *is* the state.
-  If two things can drift apart, that is the bug.
-- **Isolate only where isolation is genuinely required** — and pay for it knowingly. An
-  iframe because a CSS sample would otherwise restyle the docs page, yes; a shadow root
-  that costs the page's own theme, no.
-- **Defined by refusal.** What it will not become is stated up front, in CONTRIBUTING.md,
-  and it is checked before building rather than after.
-- **Small enough to finish.** Scope to something that can reach *done*.
-
-# Standards
-
-These hold in every repo of mine, whether or not it has an `AGENTS.md` — that file is
-optional, and where it exists it carries only what is specific to that project (its layout,
-its traps, its own "ask first"). Do not restate the standing rules there; this file is where
-they live.
-
-- **Settle whether a thing should exist before building it.** A question from me is a
-  question, not approval — do not start until the premise is agreed. I will ask "do we need
-  this?" more often than "is this correct?", so answer that one first, in the same reply,
-  before there is code to defend.
-- **Focus before features.** Work the checklist below before writing any code. Stop at the
-  first "no" — most ideas die at step 1, and that is the checklist working, not failing.
-
-**Before building a feature**
-
-1. **What already exists? Find out before designing anything.** Assume it has been built
-   and go looking for who built it — the platform or the stdlib first, since that is the
-   cheapest way for a thing to already exist, then the ecosystem. **Cite what you find, a
-   URL per fact, never from memory.** If you did not open it, you do not know it. Note what
-   they call it too: a feature that invents fresh vocabulary for something already named is
-   a feature nobody finds. Searching is the step, not a formality before the step.
-
-   **Novelty is not the test and never was.** Most of what I build is a better-fitting
-   version of something that exists — `poops` is one of many bundlers, and that is the
-   normal case, not a concession. Finding nothing is not a green light either: if nobody
-   has built it, the first possibility is that nobody wanted it, and you now have to say
-   why they were wrong.
-2. **What distinct value would mine add?** This is the gate. Judge on value, never on
-   features — the question is not "do they have this too" but **what does a user actually
-   get from theirs, and what would they get from mine that they cannot get there?** Two
-   tools ship the same bullet and deliver opposite value. Simpler, better-fitting, or mine
-   to own rather than wait on, are all real answers.
-
-   **So is "it exists but does not meet my standards"** — in practice my most common one. A
-   package that works but drags twelve transitive dependencies, or exposes an imperative
-   API where a declarative one would do, or cannot reach *done* because it is a framework
-   fragment, fails the design philosophy however well it runs. `argoyle` and
-   `marked-github-footnote` are both this: crowded domains where the zero-dependency
-   version was not there.
-
-   The guard, because this answer can rationalize rebuilding anything: **name the standard
-   it breaks and the cost that break puts on a user.** "Twelve transitive dependencies I
-   would be on the hook for" is a cost. "I would have named it differently" is taste, and
-   taste is not a reason to maintain a package for years.
-
-   Say the difference in one sentence.
-   **If you cannot, there is none — do not build it.** "They already do this well" is a
-   complete and correct answer; the move is to say so in the README and send people there.
-   Know the alternatives well enough to recommend them — a table that only flatters mine is
-   a table nobody believes, and being trusted about where mine loses is what makes the rest
-   of the page credible.
-3. **Does it fit what the project refuses to become?** CONTRIBUTING.md says. Check before
-   building, not after.
-4. **Still yes?** Build the smallest version that works.
-- **Declarative over imperative.** A behaviour expressible as config, an attribute or a
-  declaration beats a function someone has to call. `poops.json` over a plugin API,
-  attributes over JavaScript setup. This one is not in the template — it is mine, and it
-  goes back to 2013.
-- **YAGNI. Native and stdlib first. Root cause over symptom. Delete dead code** — git
-  remembers, so no commented-out blocks and no "for later" exports.
-- **Document in the same change as the code**, in the page that already covers it. A doc
-  nobody asked for is a doc nobody maintains.
-- **Never** weaken, skip or delete a test to make it pass; never edit a generated
-  directory; never bump a version or publish — a tag does that.
-- **Ask first** on a public API change, a new dependency, or a config format change.
-
-No bullshit — `poops` bills itself as a "no-bullshit bundler", and that is the register for
-the work as much as the prose.
+- **Degrade honestly**, as everywhere: no JS, no webfont, no CSS, the page still reads —
+  which is also what makes it cheap for an agent to parse.
 
 # New projects
 
