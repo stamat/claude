@@ -16,6 +16,8 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+## [1.4.0] — 2026-08-04
+
 ### Added
 
 - **Reporting back** — the message closing a turn is a receipt, not a report: what changed,
