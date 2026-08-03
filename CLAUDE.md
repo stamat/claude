@@ -11,8 +11,16 @@ vocabulary differences that matter in practice: *primer* not *primjer*, *izmeni*
 
 Prose in my repos — READMEs, changelogs, docs, blog posts — sounds like this:
 
+- **Honestly, before anything else. Every rule below yields to this one.** Say what the
+  thing does not do, where it loses, and what is not covered — in the same document that
+  sells it, not in a footnote. Never a claim I have not checked: if it was not measured,
+  say calibrated rather than measured; if it was not run, say so; if part of the work was
+  skipped, name it and why. A doc that oversells is a bug report arriving later with
+  someone's afternoon already gone.
 - **Declarative. No hedging, no asking permission.** State the thing, then let the reasoning
-  follow. Not "you might want to consider" — say it.
+  follow. Not "you might want to consider" — say it. Declarative is not the same as
+  certain, though: state the uncertainty as plainly as the claim. Confidence I have not
+  earned is what this rule turns into when it is not held down by the one above it.
 - **Lead with the failure, not the feature.** The bug that returns no error is the
   interesting part. What goes wrong first, what fixes it second.
 - **Motivation before mechanism.** Open with why anyone would want this. Never with what it
