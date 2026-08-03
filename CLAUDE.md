@@ -83,11 +83,13 @@ down, and each of the three parts is load-bearing:
   only makes sense inside a framework is not one, and neither is a thing so broad it can
   never be finished. Whole is what makes *done* reachable.
 - **Deserves to exist** — earned against what is already out there, on value not novelty.
+  The checklist under *Before building* is how that gets decided.
 
 *Smallest* alone produces fragments; *whole* alone produces bloat. The pair is the
 constraint.
 
-A feature fails here is not needed, however cleanly it could be written:
+The rest follows from those two sentences. A feature that fails any of them is not needed,
+however cleanly it could be written:
 
 - **Inherit context, do not replace it.** Wrap what the user already has rather than asking
   them to port into my world — upgrade the `<pre><code>` the generator emitted, take a
@@ -107,13 +109,14 @@ A feature fails here is not needed, however cleanly it could be written:
   to call in the right order. `poops.json` over a plugin API. Mine since 2013.
 
 # Before building
-- **Settle whether a thing should exist before building it.** A question from me is a
-  question, not approval — do not start until the premise is agreed. I will ask "do we need
-  this?" more often than "is this correct?", so answer that one first, in the same reply,
-  before there is code to defend.
 
-Stop at the first "no". Most ideas die at step 1; that is the checklist working, not
-failing.
+**Settle whether a thing should exist before building it.** A question from me is a
+question, not approval — do not start until the premise is agreed. I will ask "do we need
+this?" more often than "is this correct?", so answer that one first, in the same reply,
+before there is code to defend.
+
+Then work the checklist, stopping at the first "no". Most ideas die at step 1; that is the
+checklist working, not failing.
 
 1. **What already exists? Find out before designing anything.** Assume it has been built
    and go looking for who built it — the platform or the stdlib first, since that is the
@@ -143,10 +146,11 @@ failing.
    The guard, because this answer can rationalize rebuilding anything: **name the standard
    it breaks and the cost that break puts on a user.** "Twelve transitive dependencies I
    would be on the hook for" is a cost. "I would have named it differently" is taste, and
-   taste is not a reason to maintain a package for years.
+   taste is not a reason to maintain a package for years. I count as a user here — "it costs
+   me less to hold in my head" is a real cost answered, provided I can say what the load
+   actually was.
 
-   Say the difference in one sentence.
-   **If you cannot, there is none — do not build it.** "They already do this well" is a
+   Say the difference in one sentence. **If you cannot, there is none — do not build it.** "They already do this well" is a
    complete and correct answer; the move is to say so in the README and send people there.
    Know the alternatives well enough to recommend them — a table that only flatters mine is
    a table nobody believes, and being trusted about where mine loses is what makes the rest
@@ -166,6 +170,22 @@ they live.
   remembers, so no commented-out blocks and no "for later" exports.
 - **Document in the same change as the code**, in the page that already covers it. A doc
   nobody asked for is a doc nobody maintains.
+- **Read the README and the docs end to end before calling work done** — as a stranger, in
+  order, not only the section you edited. Documentation is held to the standard code is held
+  to, and it drifts faster because nothing fails when it rots.
+
+  **Sound:** no claim that stopped being true, no two sections disagreeing, no example that
+  no longer runs. If a change made a sentence elsewhere wrong, that sentence is part of the
+  change.
+
+  **Complete:** every public attribute, option and API present; the limits stated; the
+  failure modes named. Nothing documented that no longer exists, nothing shipped that is not
+  documented. Every link and every "see X" resolves.
+
+  **Minimal, one streamlined narrative.** It reads start to finish, each section earning its
+  place and following from the last. Say a thing once, where it belongs — a fact repeated in
+  three sections is three things to keep in step, and two will rot. Cut restatement,
+  throat-clearing, and summaries of what the reader just read.
 - **Never** weaken, skip or delete a test to make it pass; never edit a generated
   directory; never bump a version or publish — a tag does that.
 - **Ask first** on a public API change, a new dependency, or a config format change.
