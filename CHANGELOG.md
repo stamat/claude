@@ -16,6 +16,13 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+### Changed
+
+- **The README names what the config expects but does not carry** — the caveman and
+  ponytail plugins, their hook scripts and `peon-ping` under `~/.claude/hooks/`, and a
+  pinned Homebrew node path. A fresh machine fails those hooks loudly until they exist;
+  the caveat now says so and says what to delete instead.
+
 ## [1.4.0] — 2026-08-04
 
 ### Added

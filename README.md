@@ -73,8 +73,15 @@ approval. Most agent configs say what to build; almost none say when to stop and
 
 ## Caveats
 
-`settings.json` carries absolute paths under `/Users/stamat` in its hook commands. Fine
-across my machines, needs editing on yours.
+`settings.json` carries absolute paths under `/Users/stamat` in its hook commands — one of
+them a Homebrew node pinned to a version — fine across my machines, needs editing on yours.
+It also expects what `script/bootstrap` never installs: two third-party plugins,
+[caveman](https://github.com/JuliusBrussee/caveman) and
+[ponytail](https://github.com/DietrichGebert/ponytail) — terse prose and lazy-first scope,
+the modes this config runs under — plus their hook scripts and `peon-ping` under
+`~/.claude/hooks/`, which live outside this repo. A fresh machine fails those hooks loudly
+every session until the plugins are installed; delete the hook blocks and `enabledPlugins`
+entries if you do not want the modes.
 
 The density numbers in `keystone` are calibrated against real repos, not measured against
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct
