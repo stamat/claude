@@ -16,6 +16,27 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+## [1.2.0] — 2026-08-03
+
+### Added
+
+- **Sessions pull the config themselves.** A `SessionStart` hook runs `script/sync`:
+  fetch, fast-forward, one loud line on divergence, silence offline — a pull landing
+  mid-session takes effect the next one. Stolen from
+  [elizabethfuentes12/claude-code-dotfiles](https://github.com/elizabethfuentes12/claude-code-dotfiles),
+  which wraps the `claude` command in a shell function; a hook needs no shell setup and
+  rides the settings file already here. The half not stolen: auto-committing on exit,
+  because a timestamped "chore: sync" commit is exactly what the commit convention here
+  forbids.
+- **CI.** Ubuntu runs shell syntax checks and `script/tokens` on every push. The drift
+  check existed since 1.1.0 with nothing running it, and it shipped its first bug the day
+  it was written — also, Ubuntu is the OS I do not use, which is the point.
+- **CONTRIBUTING.md.** What this will not become — agent zoo, provider templates,
+  auto-committing sync, a framework — checked before building, with the field cited. And
+  the threat model in writing: push access to this repo is arbitrary execution on every
+  bootstrapped machine at session start, by design; held down by single-owner push and
+  2FA, not by review.
+
 ## [1.1.0] — 2026-08-03
 
 ### Added

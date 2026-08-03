@@ -49,6 +49,16 @@
             "statusMessage": "Loading caveman mode..."
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/.claude/script/sync\"",
+            "timeout": 15,
+            "async": true
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [

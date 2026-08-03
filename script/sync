@@ -1,0 +1,9 @@
+#!/bin/sh
+# Run by the SessionStart hook so every machine converges without manual pulls. Offline is
+# expected and stays silent; divergence is drift and gets one loud line. A pull landing
+# mid-session takes effect next session, when the config is read again.
+set -e
+cd "$(dirname "$0")/.."
+git fetch --quiet 2>/dev/null || exit 0
+git merge --ff-only --quiet 2>/dev/null ||
+  echo "claude config: local and origin diverged — reconcile by hand" >&2

@@ -4,7 +4,8 @@ My [Claude Code](https://claude.com/claude-code) configuration — the instructi
 standards and skills I want in every session, on every machine.
 
 One `script/bootstrap` symlinks it into `~/.claude`. An edit on any machine is a tracked
-change here; a `git pull` on the others is the whole sync.
+change here; the others pull it themselves — a `SessionStart` hook runs `script/sync`,
+silent when offline, one loud line when histories diverge.
 
 It is public because a config worth copying is one that actually commits to something. Take
 the parts that survive the trip and delete the rest — the language rules and the commit
@@ -31,6 +32,7 @@ linked. Re-running after a pull is a no-op.
 | [skills/release](skills/release) | Preflight, then hands off to `script/publish`. |
 | [settings.json](settings.json) | Permissions, hooks, statusline, enabled plugins. |
 | [script/tokens](script/tokens) | Warns when the token claim above drifts from the real file. |
+| [script/sync](script/sync) | Session-start pull — the cross-machine sync nobody has to remember. |
 
 Project-level agent notes are a separate layer and live in each repo, generated from
 [stamat/template](https://github.com/stamat/template)'s `AGENTS.md`. `CLAUDE.md` holds what
