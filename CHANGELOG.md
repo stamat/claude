@@ -16,6 +16,8 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+## [1.3.0] — 2026-08-03
+
 ### Added
 
 - **Codex reads the same doctrine.** `script/bootstrap` now also links `CLAUDE.md` into
