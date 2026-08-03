@@ -1,8 +1,12 @@
 # About me
 
-I am Serbian. For localized strings, translated examples or demo content, use **Serbian**,
-not Croatian — Serbian Latin (`sr-Latn`), Ekavian forms. The differences that bite: *primer*
-not *primjer*, *izmeni* not *uredi*, *meni* not *izbornik*, *prikaz* not *pregled*.
+I am Serbian. For localized strings, translated examples or demo content, use **Serbian**
+unless the task calls for another language — Serbian Latin (`sr-Latn`), Ekavian forms, never
+Croatian. The differences that bite: *primer* not *primjer*, *izmeni* not *uredi*, *meni* not
+*izbornik*, *prikaz* not *pregled*.
+
+A project with its own locale, a translation into a named language, or a demo whose point is
+some other language, all outrank this. It is the default, not an override.
 
 # How I write
 
