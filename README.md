@@ -66,6 +66,11 @@ The density numbers in `keystone` are calibrated against real repos, not measure
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct
 mechanically.
 
+## Changelog
+
+[CHANGELOG.md](CHANGELOG.md). A change to `CLAUDE.md` is a behaviour change, not a
+documentation change — a rule only takes effect when it is read.
+
 ## License
 
 [MIT](LICENSE)
