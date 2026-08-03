@@ -16,9 +16,10 @@ cleanly it could be written.
   [feiskyer's own caveats](https://github.com/feiskyer/claude-code-settings) name the
   cost: more skills, more token burn, worse trigger accuracy. A skill enters here when a
   wall was actually hit, never to fill a category.
-- **Provider templates or multi-agent portability.** One agent is in use. The day a
-  second one is, the agent-agnostic sections get an `AGENTS.md` mirror — a mirror, not a
-  port, and not before.
+- **Provider templates or per-agent ports.** Two agents read this config — Claude Code
+  natively, Codex through `~/.codex/AGENTS.md` symlinked to the same `CLAUDE.md` by
+  `script/bootstrap`. One file, two readers. The day a mirror needs its own content it is
+  not a mirror; that fork is refused.
 - **Auto-committing sync.** `script/sync` pulls and stops. A timestamped "chore: sync"
   commit is exactly what the commit convention forbids; an edit becomes a commit when it
   can say what changed.

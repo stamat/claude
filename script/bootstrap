@@ -51,6 +51,14 @@ for skill in "$REPO"/skills/*/; do
   link "${skill%/}" "$CLAUDE_DIR/skills/$(basename "$skill")"
 done
 
+# Codex reads global instructions from AGENTS.md under CODEX_HOME, so the same
+# CLAUDE.md serves both agents through one more symlink. No directory means no
+# Codex on this machine — skipping is the defined behaviour, not a failure.
+CODEX_DIR="${CODEX_HOME:-$HOME/.codex}"
+if [ -d "$CODEX_DIR" ]; then
+  link "$REPO/CLAUDE.md" "$CODEX_DIR/AGENTS.md"
+fi
+
 if [ -d "$BACKUP" ]; then
   echo
   echo "Replaced files are in $BACKUP"

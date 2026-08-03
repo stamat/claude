@@ -1,11 +1,19 @@
 # 🤖 claude
 
+> Immature poets imitate; mature poets steal; bad poets deface what they take, and good
+> poets make it into something better, or at least something different.
+>
+> — T.S. Eliot, ["Philip Massinger", *The Sacred Wood*](https://interestingliterature.com/2021/04/eliot-immature-poets-imitate-mature-poets-steal-meaning-analysis/) (1920) — the sentence
+> the Picasso version [misquotes](https://quoteinvestigator.com/2013/03/06/artists-steal/)
+
 My [Claude Code](https://claude.com/claude-code) configuration — the instructions,
 standards and skills I want in every session, on every machine.
 
-One `script/bootstrap` symlinks it into `~/.claude`. An edit on any machine is a tracked
-change here; the others pull it themselves — a `SessionStart` hook runs `script/sync`,
-silent when offline, one loud line when histories diverge.
+One `script/bootstrap` symlinks it into `~/.claude` — and into `~/.codex/AGENTS.md` where
+[Codex](https://developers.openai.com/codex) is installed, so both agents read the same
+doctrine from the same file. An edit on any machine is a tracked change here; the others
+pull it themselves — a `SessionStart` hook runs `script/sync`, silent when offline, one
+loud line when histories diverge.
 
 It is public because a config worth copying is one that actually commits to something. Take
 the parts that survive the trip and delete the rest — the language rules and the commit
@@ -68,6 +76,11 @@ across my machines, needs editing on yours.
 The density numbers in `keystone` are calibrated against real repos, not measured against
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct
 mechanically.
+
+The Codex link follows [OpenAI's documented discovery](https://github.com/openai/codex/blob/main/docs/agents_md.md),
+but no live Codex has read it yet on my machines — unverified until
+`codex --print-instructions` says so. And `script/sync` rides a Claude Code hook: a
+Codex-only machine gets no automatic pull; `git pull` by hand is the sync there.
 
 ## Changelog
 

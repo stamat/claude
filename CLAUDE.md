@@ -173,8 +173,8 @@ wrong? If not, do not write it.
 Each comment stands alone. No "for the same reason as above", no cross-references to other
 comments. Prune while editing a region, never in a dedicated pass.
 
-Read the neighbouring code first; it outranks this. Doctrine and density numbers: the
-`keystone` skill.
+Read the neighbouring code first; it outranks this. Doctrine and density numbers:
+`skills/keystone` in <https://github.com/stamat/claude>.
 
 # Tests
 

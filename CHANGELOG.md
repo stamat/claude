@@ -16,6 +16,25 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+### Added
+
+- **Codex reads the same doctrine.** `script/bootstrap` now also links `CLAUDE.md` into
+  `~/.codex/AGENTS.md` (respecting `CODEX_HOME`) when that directory exists — Codex's
+  documented global-instructions path. One file, two agents, no second copy to rot; a
+  machine without Codex skips the link silently, by design. Unverified by a live Codex
+  yet — none is installed here; `codex --print-instructions` is the check when one is.
+
+### Changed
+
+- **The keystone pointer became a path.** "The `keystone` skill" resolves only inside
+  Claude's skill system; `skills/keystone` in the repo resolves for any reader, Codex
+  included.
+
+- **The README opens with Eliot, sourced.** The epigraph for the theft doctrine — the
+  real 1920 sentence from "Philip Massinger", cited, not the Picasso version Jobs
+  popularised. "Good poets make it into something better, or at least something
+  different" is the step-2 gate said eighty years earlier.
+
 ## [1.2.0] — 2026-08-03
 
 ### Added
