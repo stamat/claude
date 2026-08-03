@@ -124,9 +124,23 @@ they live.
   this?" more often than "is this correct?", so answer that one first, in the same reply,
   before there is code to defend.
 - **Focus before features.** Before writing any code: is it needed at all, checked against
-  the design philosophy above? Does the platform or stdlib already do it? What is the prior
-  art — cited, a URL per fact, never guessed? Does it fit what the project refuses to
-  become? Only then, the smallest version that works. Stop at the first "no".
+  the design philosophy above? Does the platform or stdlib already do it? Does it fit what
+  the project refuses to become? Only then, the smallest version that works. Stop at the
+  first "no".
+- **Study the competition on value, not on features.** The question is never "do they have
+  this too" — it is **what does a user actually get from theirs, and what would they get
+  from mine that they cannot get there?** A feature list comparison tells you nothing; two
+  tools can ship the same bullet and deliver opposite value.
+
+  Go and look, and **cite what you find — a URL per fact, never from memory.** If you did
+  not open it, you do not know it. Note what they call it, too: a feature that invents new
+  vocabulary for something the ecosystem already named is a feature nobody finds.
+
+  Then say the distinct value in one sentence. **If you cannot, there is none — do not
+  build it.** "They already do this well" is a complete and correct answer, and the move is
+  to say so in the README and send people there. Know the alternatives well enough to
+  recommend them: a comparison table that only flatters mine is a table nobody believes,
+  and being trusted about where mine loses is what makes the rest of the page credible.
 - **Declarative over imperative.** A behaviour expressible as config, an attribute or a
   declaration beats a function someone has to call. `poops.json` over a plugin API,
   attributes over JavaScript setup. This one is not in the template — it is mine, and it
