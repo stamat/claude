@@ -55,8 +55,27 @@ This overrides any skill or default that reaches for Conventional Commits.
 
 # Design philosophy
 
-**Make the smallest functional wholes that deserve to exist.** Everything below is
-downstream of that sentence, and each of the three parts is load-bearing:
+**Everything I build exists to reduce cognitive load — mine first, then everyone else's.**
+That is the goal; the rest of this file is method.
+
+The order is the method, not selfishness. I am the one user whose problem I can actually
+observe, so solving mine properly is the only honest route to solving anyone's — and a
+thing built for a hypothetical user usually serves neither. It generalises after it works,
+not before.
+
+This is also why "everyone already has one" never settles it. **`sulphuris` exists next to
+Bootstrap, Primer and Tailwind** because all three charge the same toll: a large vocabulary
+to memorise, someone else's opinions to fight, and for Tailwind a build step and a config on
+top. Renting a mental model *is* the load. Zero dependencies and a vocabulary I named myself
+is not. On a feature comparison sulphuris loses to all three — which is precisely why the
+gate is value and not features.
+
+Be honest that this kind of value is personal first: it transfers to whoever shares the
+taste and to nobody else. That belongs in the README, stated plainly, rather than dressed up
+as general superiority.
+
+**Make the smallest functional wholes that deserve to exist.** That is how the load comes
+down, and each of the three parts is load-bearing:
 
 - **Smallest** — no speculative scope, no options nobody asked for. Cut until cutting more
   would break it.
