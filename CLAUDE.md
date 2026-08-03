@@ -67,6 +67,37 @@ with the reason.
 The test is the spec. Never weaken, skip or delete one to make it pass; if the test itself
 is wrong, say so and let me decide.
 
+# Frontend
+
+Anything that renders HTML. **Accessibility, SEO and GEO are one job, not three** — a
+screen reader, a crawler and an agent are all non-visual consumers parsing the same
+structure. Markup that a screen reader can navigate is markup an agent can consume. Build
+for that reader and the other two follow; build for sighted humans only and all three fail
+together.
+
+- **Semantic HTML first, roles second.** The right element, not a `div` with a role bolted
+  on. A role is what you reach for when no element says it — never a substitute for the one
+  that does.
+- **Names, not decoration.** Every control has an accessible name that says what it does.
+  Markup that already carries its own `aria-label` outranks any default I generate — a page
+  that named something knows more about it than I do.
+- **Keyboard is not optional.** Reachable, operable, and no traps. State what a key does
+  where the user is, not in a legend elsewhere.
+- **Heading hierarchy is the document outline**, and it is the thing every machine reader
+  uses to find its way. Do not pick a level for its size.
+- **Landmarks and one `<main>`.** Skip links where the nav is long.
+- **SEO is metadata plus structure**: title, description, canonical, Open Graph, a
+  `sitemap.xml`, and headings that describe the content rather than tease it.
+- **GEO is being quotable.** Generate `llms.txt` — poops does this natively, `llms.full`
+  for a page whose prose is the answer. Content should survive extraction: an answer that
+  only makes sense with the surrounding layout is an answer an assistant will get wrong.
+  State the fact in the sentence, not in the design.
+- **Structured data where it is true.** Schema.org for the things a page genuinely is. Not
+  as a trick — a lie in JSON-LD is a lie that ranks.
+- **Degrade honestly here too.** No JS, no webfont, no CSS: the page still reads. That is
+  the same rule as everywhere else, and it is what makes a page cheap for an agent to
+  parse.
+
 # How I build
 
 Bottom up. The primitive first, then the thing standing on it — and the primitive gets
