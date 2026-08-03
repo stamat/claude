@@ -158,7 +158,21 @@ they live.
    features — the question is not "do they have this too" but **what does a user actually
    get from theirs, and what would they get from mine that they cannot get there?** Two
    tools ship the same bullet and deliver opposite value. Simpler, better-fitting, or mine
-   to own rather than wait on, are all real answers. Say the difference in one sentence.
+   to own rather than wait on, are all real answers.
+
+   **So is "it exists but does not meet my standards"** — in practice my most common one. A
+   package that works but drags twelve transitive dependencies, or exposes an imperative
+   API where a declarative one would do, or cannot reach *done* because it is a framework
+   fragment, fails the design philosophy however well it runs. `argoyle` and
+   `marked-github-footnote` are both this: crowded domains where the zero-dependency
+   version was not there.
+
+   The guard, because this answer can rationalize rebuilding anything: **name the standard
+   it breaks and the cost that break puts on a user.** "Twelve transitive dependencies I
+   would be on the hook for" is a cost. "I would have named it differently" is taste, and
+   taste is not a reason to maintain a package for years.
+
+   Say the difference in one sentence.
    **If you cannot, there is none — do not build it.** "They already do this well" is a
    complete and correct answer; the move is to say so in the README and send people there.
    Know the alternatives well enough to recommend them — a table that only flatters mine is
