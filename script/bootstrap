@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+#
+# Links this repo into ~/.claude so every machine runs the same config.
+#
+# Symlinks rather than copies, deliberately: an edit made on any machine is
+# already a tracked change in this repo, and `git pull` propagates it with no
+# second step to remember. Copying means syncing in both directions by hand,
+# which means not syncing.
+#
+# Anything already in place is moved into ~/.claude/backups/<timestamp>/ first —
+# a broken settings.json stops Claude Code from starting, so nothing here
+# overwrites without keeping the original.
+#
+# With love, @stamat
+set -euo pipefail
+
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CLAUDE_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+BACKUP="$CLAUDE_DIR/backups/bootstrap-$(date +%Y%m%d-%H%M%S)"
+
+link() {
+  local src="$1" dest="$2"
+
+  # Already pointing at this repo — a re-run is a no-op, so bootstrap is safe to
+  # run after every pull.
+  if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+    echo "  ok       $dest"
+    return
+  fi
+
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    mkdir -p "$BACKUP/$(dirname "${dest#"$CLAUDE_DIR"/}")"
+    mv "$dest" "$BACKUP/${dest#"$CLAUDE_DIR"/}"
+    echo "  backed up ${dest#"$CLAUDE_DIR"/}"
+  fi
+
+  mkdir -p "$(dirname "$dest")"
+  ln -s "$src" "$dest"
+  echo "  linked   $dest"
+}
+
+echo "Linking $REPO into $CLAUDE_DIR"
+mkdir -p "$CLAUDE_DIR/skills"
+
+link "$REPO/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+link "$REPO/settings.json" "$CLAUDE_DIR/settings.json"
+
+# Per skill rather than the whole directory: ~/.claude/skills also holds skills
+# installed by other things, and claiming the directory would hide them.
+for skill in "$REPO"/skills/*/; do
+  link "${skill%/}" "$CLAUDE_DIR/skills/$(basename "$skill")"
+done
+
+if [ -d "$BACKUP" ]; then
+  echo
+  echo "Replaced files are in $BACKUP"
+fi

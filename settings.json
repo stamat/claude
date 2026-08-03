@@ -1,0 +1,257 @@
+{
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://bundlephobia.com/api/size?package=commander@11.1.0\")",
+      "Bash(curl -sL \"https://bundlephobia.com/api/size?package=minimist@1.2.6\")",
+      "Bash(curl -sI \"https://packagephobia.com/v2/api.json?p=commander@14.0.3\")",
+      "Bash(npm ls --depth=0)",
+      "Bash(node -e \"import\\(''./lib/processor.js''\\).then\\(m => console.log\\(''main export:'', typeof m.default\\)\\)\")",
+      "Read(//Users/stamat/Sites/localhost/poops-images/**)",
+      "Bash(npm info argoyle)",
+      "Bash(npm info printstyle)",
+      "Read(//private/tmp/**)",
+      "Bash(node -e \":*)",
+      "Bash(node poops-images.js src -o dist --force)",
+      "Bash(node poops-images.js src -o dist --format webp --force)",
+      "Bash(node poops-images.js src -o dist)",
+      "Bash(npm test -- --testPathPattern bliss)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest --testPathPattern bliss)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest bliss)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest --testPathIgnorePatterns bliss)",
+      "Bash(npx poops-images)",
+      "Bash(git ls-tree -r HEAD --name-only -l)",
+      "Bash(sort -k4 -rn)",
+      "Bash(git rm --cached src/exif.jpeg src/test.jpg src/test.png src/test.svg poops-images.json)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest -- preprocess processor config analyze sizes)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest -- preprocess)",
+      "Bash(NODE_OPTIONS='--experimental-vm-modules' npx jest __tests__/preprocess.test.js)",
+      "Bash(node poops-images.js --force)",
+      "Bash(node cli.js --force)",
+      "Bash(node ./poops-images.js --force)",
+      "Bash(npm test -- --testPathPatterns bliss)",
+      "Bash(git checkout *)",
+      "Bash(grep -E '\\\\.\\(php|js|vue\\)$')",
+      "Bash(mkdir -p /Users/stamat/Sites/localhost/puminjak/app/Scrapers/Contracts)",
+      "Bash(grep -n '$this->log' /Users/stamat/Sites/localhost/puminjak/app/Scrapers/BuzzSneakers.php)",
+      "Bash(npm run *)",
+      "Bash(mv /Users/stamat/Sites/localhost/puminjak/docker/development/worker/worker-entrypoint /Users/stamat/Sites/localhost/puminjak/docker/development/worker/entrypoint.sh)",
+      "Bash(mv /Users/stamat/Sites/localhost/puminjak/docker/production/worker/worker-entrypoint /Users/stamat/Sites/localhost/puminjak/docker/production/worker/entrypoint.sh)",
+      "Bash(docker exec puminjak-app-1 php -r ' *)",
+      "Bash(docker exec *)",
+      "Bash(curl -s -c /tmp/cookies.txt -b /tmp/cookies.txt -X GET http://localhost:8000/passkeys/login/options -H \"Accept: application/json\")",
+      "mcp__dual-graph__fallback_rg",
+      "mcp__dual-graph__graph_register_edit",
+      "Bash(which php8.4 php83 php82 php81 php || ls /opt/homebrew/bin/php*)",
+      "Read(//opt/homebrew/bin/**)",
+      "mcp__dual-graph__graph_add_memory",
+      "Bash(grep -v \"psysh\\\\|User Notice\\\\|^$\")",
+      "Bash(echo \"exit:$?\")",
+      "Bash(echo \"view exit:$?\")",
+      "Bash(npm install *)",
+      "Bash(node generate-default-config.mjs)",
+      "Read(//Users/stamat/Sites/localhost/src/**)",
+      "Bash(sed -i '' \"/'docs-examples',/d\" extract-cases.mjs)",
+      "Bash(node extract-cases.mjs)",
+      "Bash(git mv *)",
+      "Bash(xargs perl -i -pe 's/squad\\\\.yaml/codesquad.yaml/g')",
+      "Bash(uv run *)",
+      "Bash(uv build *)",
+      "Bash(python3 -c ' *)",
+      "Bash(perl -i -pe 's/squad\\\\.yaml/codesquad.yaml/g' README.md)",
+      "Bash(perl -i -pe 's{src/squad/}{src/codesquad/}g' README.md)",
+      "Bash(uv --version)",
+      "Bash(uvx --from codesquad codesquad --help)",
+      "Bash(echo \"---EXIT: $?---\")",
+      "Bash(uvx --from codesquad codesquad init .)",
+      "Bash(echo \"=== EXIT $? ===\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://pypi.org/pypi/codesquad/json)",
+      "Bash(curl -s https://pypi.org/pypi/codesquad/json)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\)['info']; print\\(d['author'], d['home_page'], d['project_urls'], d['version']\\)\")",
+      "Bash(curl -s localhost:11434/api/tags)",
+      "Bash(git -C /private/tmp/claude-501/-Users-stamat-Sites-localhost-squad/7a127ae6-25e6-47a6-a923-35428de84caa/scratchpad/demo worktree list)",
+      "Bash(awk '{print $1}')",
+      "Bash(xargs -I{} git -C /private/tmp/claude-501/-Users-stamat-Sites-localhost-squad/7a127ae6-25e6-47a6-a923-35428de84caa/scratchpad/demo worktree remove --force {})",
+      "Bash(grep -nA15 'def cost' src/codesquad/cli.py)"
+    ],
+    "additionalDirectories": [
+      "/Users/stamat/Sites/localhost/puminjak/app/Scrapers",
+      "/Users/stamat/Sites/localhost/puminjak/database/migrations"
+    ]
+  },
+  "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/opt/homebrew/Cellar/node/25.3.0/bin/node\" \"/Users/stamat/.claude/hooks/caveman-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading caveman mode..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/scripts/hook-handle-use.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/opt/homebrew/Cellar/node/25.3.0/bin/node\" \"/Users/stamat/.claude/hooks/caveman-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Tracking caveman mode..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stamat/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"/Users/stamat/.claude/hooks/caveman-statusline.sh\""
+  },
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true,
+    "caveman@caveman": true,
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
+  "effortLevel": "xhigh",
+  "theme": "dark",
+  "tui": "fullscreen"
+}
