@@ -1,0 +1,23 @@
+#!/bin/sh
+# Warns when README.md's "~X.Xk tokens" claim drifts more than 10% from CLAUDE.md's size.
+# 4.2 bytes/token is calibrated against one cl100k count of the 2026-08 file, not measured
+# per run — when this fires, re-count with a real tokenizer, then update the README and,
+# if the ratio moved, this constant.
+set -e
+cd "$(dirname "$0")/.."
+
+bytes=$(wc -c < CLAUDE.md)
+estimate=$((bytes * 10 / 42))
+
+claim=$(sed -n 's/.*~\([0-9][0-9.]*\)k tokens.*/\1/p' README.md | head -1)
+[ -n "$claim" ] || { echo "no ~X.Xk tokens claim found in README.md"; exit 1; }
+claimed=$(awk "BEGIN { printf \"%d\", $claim * 1000 }")
+
+drift=$((estimate - claimed))
+[ "$drift" -lt 0 ] && drift=$((-drift))
+
+if [ $((drift * 100)) -gt $((claimed * 10)) ]; then
+  echo "README claims ~${claim}k tokens, CLAUDE.md estimates ${estimate} — update the claim"
+  exit 1
+fi
+echo "token claim holds: ~${claim}k claimed, ${estimate} estimated"

@@ -25,11 +25,12 @@ linked. Re-running after a pull is a no-op.
 
 | | |
 | --- | --- |
-| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo. Voice, commits, tests, how I build, design philosophy, standards. |
+| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo — ~3.3k tokens of context each time. Voice, commits, tests, how I build, design philosophy, standards. |
 | [skills/keystone](skills/keystone) | Comment doctrine — what earns a comment when the reader is an agent. |
 | [skills/changelog-entry](skills/changelog-entry) | Drafts a Keep a Changelog `[Unreleased]` entry from the diff. |
 | [skills/release](skills/release) | Preflight, then hands off to `script/publish`. |
 | [settings.json](settings.json) | Permissions, hooks, statusline, enabled plugins. |
+| [script/tokens](script/tokens) | Warns when the token claim above drifts from the real file. |
 
 Project-level agent notes are a separate layer and live in each repo, generated from
 [stamat/template](https://github.com/stamat/template)'s `AGENTS.md`. `CLAUDE.md` holds what

@@ -16,6 +16,35 @@ change**, not a documentation change. Treat it as one.
 
 ## [Unreleased]
 
+## [1.1.0] — 2026-08-03
+
+### Added
+
+- **`script/tokens`** — warns when the README's token claim drifts more than 10% from
+  `CLAUDE.md`. Byte-based estimate calibrated once against a real tokenizer count, not
+  measured per run; a warning means re-count and update the claim, never that the number
+  is exact.
+
+### Changed
+
+- **`CLAUDE.md` cut from ~3.5k to ~3.3k tokens without losing a rule.** Checked against
+  the published field — Anthropic's best-practices page, HumanLayer's instruction-budget
+  numbers, the AGENTS.md spec — then compressed the restatements: every rule and its
+  anecdote stayed, the second whys went. The one behaviour change: the language section is
+  now a single preference line — Serbian Latin over Croatian, Ekavian forms, with the
+  vocabulary pairs that bite — instead of a paragraph about demo-content defaults.
+- **The README now states the cost:** ~3.3k tokens of context in every session, next to
+  what the file buys.
+
+### Fixed
+
+- **Two rules said the wrong thing.** "Before writing a comment: delete it" told an agent
+  to delete a comment that does not exist yet — now "imagine it deleted". "An HTML
+  attribute escapes `&` and `"`" made the attribute the actor — now the interpolation does
+  the escaping. Also restored: the sulphuris counter-clause ("a vocabulary I named myself
+  is not"), the iframe-versus-shadow-root isolation example, and never-weaken-tests now
+  lives once, in Tests, instead of twice.
+
 ## [1.0.0] — 2026-08-03
 
 The configuration as it stands after being written, argued with, and cut back down.
