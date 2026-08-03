@@ -3,8 +3,8 @@
 > Immature poets imitate; mature poets steal; bad poets deface what they take, and good
 > poets make it into something better, or at least something different.
 >
-> — T.S. Eliot, ["Philip Massinger", *The Sacred Wood*](https://interestingliterature.com/2021/04/eliot-immature-poets-imitate-mature-poets-steal-meaning-analysis/) (1920) — the sentence
-> the Picasso version [misquotes](https://quoteinvestigator.com/2013/03/06/artists-steal/)
+> — T.S. Eliot, ["Philip Massinger", *The Sacred Wood*](https://interestingliterature.com/2021/04/eliot-immature-poets-imitate-mature-poets-steal-meaning-analysis/) (1920) - 
+> Steve Jobs [misquote](https://quoteinvestigator.com/2013/03/06/artists-steal/)
 
 My [Claude Code](https://claude.com/claude-code) configuration — the instructions,
 standards and skills I want in every session, on every machine.
