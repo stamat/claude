@@ -31,8 +31,8 @@ If the header asks for something not listed here, do that instead.
 
 1. `git diff` (or `git diff --staged`, or against the merge base) to see what landed.
 2. Read `CHANGELOG.md`'s header block for the house rules.
-3. Read the last two or three released entries. They are the voice sample — match their
-   length, their bolding, their level of detail.
+3. Read the last two or three released entries for bolding and grouping. Match their
+   shape, not their length — an existing entry that runs long is not a licence to.
 4. Write the entry under `## [Unreleased]`, in the right group.
 
 ## Groups
@@ -42,22 +42,36 @@ Only the ones you need, in that order. Create `## [Unreleased]` if it is missing
 
 ## Voice
 
+Bare. One sentence saying what changed, one saying why. Two sentences is the ceiling, not
+the target — most bullets are one.
+
 - **Write for the person upgrading, not the person who wrote the code.** "Describe what
   changed for someone using this, not which functions moved."
-- Lead each bullet with a bold sentence stating the change, then explain. The bold line is
-  what someone skims; the rest is what they read when it affects them.
-- Say what was wrong before when the change is a fix or a rework — the motivation is the
-  part that cannot be recovered from the diff later.
+- Lead each bullet with a bold sentence stating the change. Add the *why* only when the
+  diff cannot show it — a fix, a rework, a reversed default.
 - No commit hashes, no file paths, no function names unless they are public API.
 - No AI attribution.
 
 Shape of a bullet that works:
 
 ```markdown
-- **The console strip moved from under the preview to under the code block.** Two boxes
-  said the same kind of thing in two places, and neither was where the reader was looking:
-  the lines are logged by the js in the pane, so they belong against the pane.
+- **The console strip moved from under the preview to under the code block.** The lines are
+  logged by the js in the pane, so they belong against the pane.
 ```
+
+### Cut before writing
+
+An entry is not a design note, a test report or a post-mortem. None of these belong in it:
+
+- **How it was verified.** Browsers driven, scenarios run, numbers measured — that is the PR.
+- **Alternatives rejected**, and why the shape is what it is — that is the commit body.
+- **Internals a reader cannot touch** — a listener removed, a helper inlined, a selector
+  constant. Only what they can call, write in markup, style or catch.
+- **The second telling.** One narrative per bullet; a rename table replaces its prose, not
+  joins it.
+
+Long is the failure, not the effort. If a bullet needs three paragraphs to land, the thing
+it describes needs a docs page — link that instead.
 
 ## Breaking changes
 
