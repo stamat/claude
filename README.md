@@ -76,10 +76,15 @@ approval. Most agent configs say what to build; almost none say when to stop and
 `settings.json` carries absolute paths under `/Users/stamat` in its hook commands — fine
 across my machines, needs editing on yours. It also expects what `script/bootstrap` never
 installs: the third-party [ponytail](https://github.com/DietrichGebert/ponytail) plugin —
-lazy-first scope, the mode this config runs under — and `peon-ping` under
-`~/.claude/hooks/`, which lives outside this repo. A fresh machine fails those hooks loudly
-every session until they exist; delete the hook blocks and the `enabledPlugins` entry if you
-do not want them.
+lazy-first scope, the mode this config runs under — `peon-ping` under `~/.claude/hooks/`,
+and [limbic](https://github.com/stamat/limbic) cloned to `~/Sites/localhost/limbic`, whose
+two hooks record your corrections and give the rules you accept to each new session. A
+fresh machine fails those hooks loudly every session until they exist; delete the hook
+blocks and the `enabledPlugins` entry if you do not want them.
+
+The committed `settings.json` is the default, not a copy of my machine. Permissions that
+let any code run (`node -e`, `python -c`), allow a write to GitHub (`gh api`, `gh repo`),
+or match one past command stay out of it.
 
 The density numbers in `keystone` are calibrated against real repos, not measured against
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct

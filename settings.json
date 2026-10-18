@@ -5,29 +5,34 @@
       "Bash(docker exec *)",
       "Bash(git checkout *)",
       "Bash(git mv *)",
-      "Bash(node -e \":*)",
       "Bash(npm install *)",
-      "Bash(npm ls --depth=0)",
       "Bash(npm run *)",
       "Bash(npx poops-images)",
-      "Bash(python3 -c ' *)",
       "Bash(uv --version)",
       "Bash(uv build *)",
       "Bash(uv run *)",
-      "Read(//Users/stamat/Sites/localhost/poops-images/**)",
-      "Read(//Users/stamat/Sites/localhost/src/**)",
       "Read(//opt/homebrew/bin/**)",
       "Read(//private/tmp/**)",
       "mcp__dual-graph__fallback_rg",
       "mcp__dual-graph__graph_add_memory",
-      "mcp__dual-graph__graph_register_edit"
+      "mcp__dual-graph__graph_register_edit",
+      "Bash(npm view *)",
+      "Bash(npm ls *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(gh repo view *)",
+      "Read(//Users/stamat/Sites/localhost/**)",
+      "WebFetch(domain:stamat.info)"
     ],
     "additionalDirectories": [
       "/Users/stamat/Sites/localhost/puminjak/app/Scrapers",
       "/Users/stamat/Sites/localhost/puminjak/database/migrations"
     ]
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "hooks": {
     "SessionStart": [
       {
@@ -47,6 +52,15 @@
             "command": "\"$HOME/.claude/script/sync\"",
             "timeout": 15,
             "async": true
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/stamat/Sites/localhost/limbic/hooks/inject.js\"",
+            "timeout": 5
           }
         ]
       }
@@ -69,6 +83,15 @@
           {
             "type": "command",
             "command": "/Users/stamat/.claude/hooks/peon-ping/scripts/hook-handle-use.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/Users/stamat/Sites/localhost/limbic/hooks/classify.js\"",
             "timeout": 5
           }
         ]
@@ -186,6 +209,12 @@
     }
   },
   "effortLevel": "xhigh",
+  "tui": "fullscreen",
   "theme": "dark",
-  "tui": "fullscreen"
+  "remoteControlAtStartup": true,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  }
 }
