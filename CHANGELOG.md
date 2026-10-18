@@ -24,6 +24,8 @@ change**, not a documentation change. Treat it as one.
 
 ### Changed
 
+- **A refusal in CONTRIBUTING.md is a check, not a wall.** When one blocks a change that
+  would benefit the project, the agent names it and proposes the edit instead of stopping.
 - **The README names what the config expects but does not carry** — the ponytail plugin,
   `peon-ping` under `~/.claude/hooks/` and the limbic clone. A fresh machine fails those
   hooks loudly until they exist; the caveat now says so and says what to delete instead.

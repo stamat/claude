@@ -34,7 +34,7 @@ linked. Re-running after a pull is a no-op.
 
 | | |
 | --- | --- |
-| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo — ~2.6k tokens of context each time. Commits, tests, how I build, design philosophy, standards: the doctrine that must act unprompted. |
+| [CLAUDE.md](CLAUDE.md) | Loaded every session, every repo — ~2.9k tokens of context each time. Commits, tests, how I build, design philosophy, standards: the doctrine that must act unprompted. |
 | [skills/keystone](skills/keystone) | Comment doctrine — what earns a comment when the reader is an agent. |
 | [skills/how-i-write](skills/how-i-write) | House voice for READMEs, changelogs, docs and blog posts. |
 | [skills/before-building](skills/before-building) | The checklist that settles whether a thing should exist. |

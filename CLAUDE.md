@@ -101,7 +101,9 @@ feature failing any of the following is not needed, however cleanly it could be 
 - **Isolate only where genuinely required**, and pay for it knowingly: an iframe so a CSS
   sample cannot restyle the docs page, yes; a shadow root that costs the page its theme, no.
 - **Defined by refusal.** What it will not become is stated in CONTRIBUTING.md, and checked
-  before building rather than after.
+  before building rather than after. I wrote those refusals, and they can change. When a
+  refusal blocks a change that would benefit the project, name the refusal, say what the
+  change gains, and propose the edit to CONTRIBUTING.md. Do not treat a refusal as a wall.
 
 # Before building
 
