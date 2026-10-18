@@ -78,7 +78,8 @@ across my machines, needs editing on yours. It also expects what `script/bootstr
 installs: the third-party [ponytail](https://github.com/DietrichGebert/ponytail) plugin —
 lazy-first scope, the mode this config runs under — `peon-ping` under `~/.claude/hooks/`,
 and [limbic](https://github.com/stamat/limbic) cloned to `~/Sites/localhost/limbic`, whose
-two hooks record your corrections and give the rules you accept to each new session. A
+hooks record your corrections, give the rules you accept to each new session, and repeat
+the "Commits" section of `CLAUDE.md` before the first `git commit` of a session. A
 fresh machine fails those hooks loudly every session until they exist; delete the hook
 blocks and the `enabledPlugins` entry if you do not want them.
 

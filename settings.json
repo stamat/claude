@@ -187,6 +187,19 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit *)",
+            "command": "node \"/Users/stamat/Sites/localhost/limbic/hooks/remind.js\" Commits",
+            "timeout": 5
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
