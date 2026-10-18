@@ -44,16 +44,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"/opt/homebrew/Cellar/node/25.3.0/bin/node\" \"/Users/stamat/.claude/hooks/caveman-activate.js\"",
-            "timeout": 5,
-            "statusMessage": "Loading caveman mode..."
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
             "command": "\"$HOME/.claude/script/sync\"",
             "timeout": 15,
             "async": true
@@ -80,16 +70,6 @@
             "type": "command",
             "command": "/Users/stamat/.claude/hooks/peon-ping/scripts/hook-handle-use.sh",
             "timeout": 5
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"/opt/homebrew/Cellar/node/25.3.0/bin/node\" \"/Users/stamat/.claude/hooks/caveman-mode-tracker.js\"",
-            "timeout": 5,
-            "statusMessage": "Tracking caveman mode..."
           }
         ]
       }
@@ -186,13 +166,9 @@
       }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bash \"/Users/stamat/.claude/hooks/caveman-statusline.sh\""
-  },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true,
-    "caveman@caveman": true,
+    "caveman@caveman": false,
     "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {

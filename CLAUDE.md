@@ -10,6 +10,23 @@ Honestly, above all: never a claim I have not checked — not run is *not run*, 
 per option with its pro, its con, its cost. The full voice for READMEs, changelogs, docs and
 blog posts: `skills/how-i-write` in <https://github.com/stamat/claude>.
 
+Explanations to me and documentation — READMEs, docs, changelogs, CONTRIBUTING.md — follow
+**ASD-STE100 Simplified Technical English**. STE sets the sentence; `how-i-write` sets what
+goes in it. Blog posts keep the full house voice.
+
+- **One word, one meaning, one part of speech.** Use the STE dictionary words; a technical
+  name (`OfferWriter`, `srcset`) or technical verb (*deploy*, *scrape*) is allowed as is.
+  Use the same term for the same thing every time — no synonyms for variety.
+- **Short sentences.** Instructions: 20 words or fewer, one instruction per sentence.
+  Descriptions: 25 words or fewer. Paragraphs: six sentences or fewer.
+- **Active voice, simple tenses** — present, simple past, simple future. Instructions use
+  the imperative: *Run `script/test`.*, not *You should run…*.
+- **No -ing forms**, except inside a technical name. **Noun clusters of three words or
+  fewer** — break a longer one with *of*, *for*, *in*.
+- **Keep the small words.** Do not drop articles, *that*, or verbs to make text shorter.
+- **Lists for sequences and conditions.** A warning starts with the command: *Do not run
+  `migrate:fresh --env=testing`. It drops the development database.*
+
 # My repositories
 
 Mine live at <https://github.com/stamat>. A repo named bare — `poops`, `template`,

@@ -41,7 +41,7 @@ linked. Re-running after a pull is a no-op.
 | [skills/frontend](skills/frontend) | Accessibility, SEO and GEO as one job, for anything rendering HTML. |
 | [skills/changelog-entry](skills/changelog-entry) | Drafts a Keep a Changelog `[Unreleased]` entry from the diff. |
 | [skills/release](skills/release) | Preflight, then hands off to `script/publish`. |
-| [settings.json](settings.json) | Permissions, hooks, statusline, enabled plugins. |
+| [settings.json](settings.json) | Permissions, hooks, enabled plugins. |
 | [script/tokens](script/tokens) | Warns when the token claim above drifts from the real file. |
 | [script/sync](script/sync) | Session-start pull — the cross-machine sync nobody has to remember. |
 
@@ -73,15 +73,13 @@ approval. Most agent configs say what to build; almost none say when to stop and
 
 ## Caveats
 
-`settings.json` carries absolute paths under `/Users/stamat` in its hook commands — one of
-them a Homebrew node pinned to a version — fine across my machines, needs editing on yours.
-It also expects what `script/bootstrap` never installs: two third-party plugins,
-[caveman](https://github.com/JuliusBrussee/caveman) and
-[ponytail](https://github.com/DietrichGebert/ponytail) — terse prose and lazy-first scope,
-the modes this config runs under — plus their hook scripts and `peon-ping` under
-`~/.claude/hooks/`, which live outside this repo. A fresh machine fails those hooks loudly
-every session until the plugins are installed; delete the hook blocks and `enabledPlugins`
-entries if you do not want the modes.
+`settings.json` carries absolute paths under `/Users/stamat` in its hook commands — fine
+across my machines, needs editing on yours. It also expects what `script/bootstrap` never
+installs: the third-party [ponytail](https://github.com/DietrichGebert/ponytail) plugin —
+lazy-first scope, the mode this config runs under — and `peon-ping` under
+`~/.claude/hooks/`, which lives outside this repo. A fresh machine fails those hooks loudly
+every session until they exist; delete the hook blocks and the `enabledPlugins` entry if you
+do not want them.
 
 The density numbers in `keystone` are calibrated against real repos, not measured against
 outcomes. Treat a file outside the range as worth a look, never as a violation to correct
