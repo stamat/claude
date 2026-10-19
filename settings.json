@@ -195,7 +195,7 @@
           {
             "type": "command",
             "if": "Bash(git commit *)",
-            "command": "node \"/Users/stamat/Sites/localhost/limbic/hooks/remind.js\" Commits",
+            "command": "node \"/Users/stamat/Sites/localhost/limbic/hooks/remind.js\" Commits --commit",
             "timeout": 5
           }
         ]
