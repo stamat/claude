@@ -18,9 +18,10 @@ change**, not a documentation change. Treat it as one.
 
 ### Added
 
-- **Explanations and documentation follow ASD-STE100 Simplified Technical English.** STE
-  controls the sentence, and `how-i-write` controls the content; blog posts keep the full
-  house voice.
+- **Docs pages and CONTRIBUTING.md follow ASD-STE100 Simplified Technical English; replies
+  take a subset.** The full rule covered the README and changelog too, and none of them
+  complied. The voice is part of what those files deliver. Replies keep one term per thing,
+  short sentences, active voice and the small words, without the dictionary or the -ing ban.
 
 ### Changed
 
