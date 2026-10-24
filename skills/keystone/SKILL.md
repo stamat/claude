@@ -12,8 +12,8 @@ and must survive every cleanup. Knowing which is which is the whole skill.
 
 ## Persistence
 
-ACTIVE EVERY RESPONSE. Applies to comments you write and comments you review. Off only:
-"stop keystone" / "normal mode". Default level: **full**.
+Once loaded, active for the rest of the session. Applies to comments you write and comments
+you review. Off only: "stop keystone" / "normal mode". Default level: **full**.
 
 ## The axis
 

@@ -66,13 +66,9 @@ That is the goal; the rest is method.
 The order is method, not selfishness: mine is the one problem I can observe. It generalises
 after it works, not before.
 
-Which is why "everyone already has one" never settles it. **`sulphuris` exists beside
-Bootstrap, Primer and Tailwind** because all three charge the same toll — a large vocabulary
-to memorise, someone else's opinions to fight, and for Tailwind a build step and config too.
-Renting a mental model *is* the load — a vocabulary I named myself is not. On features
-sulphuris loses to all three, which is precisely why the gate is value. Be honest that this
-kind of value is personal first: it transfers to whoever shares the taste and nobody else,
-and the README says so plainly rather than claiming general superiority.
+Which is why "everyone already has one" never settles it: renting someone else's mental
+model *is* the load. `sulphuris` loses to Tailwind on features and exists anyway. That value
+is personal first, and the README says so rather than claiming general superiority.
 
 **Make the smallest functional wholes that deserve to exist.** That is how the load comes
 down, and all three parts carry weight:

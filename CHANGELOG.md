@@ -34,11 +34,21 @@ change**, not a documentation change. Treat it as one.
 - **`settings.json` runs the limbic hooks, defaults to `opus[1m]` and starts remote
   control.** GitHub access without a prompt is read-only, and one `Read` of
   `~/Sites/localhost` replaces the narrower entries.
+- **The `sulphuris` paragraph in "Design philosophy" is three sentences.** The rule stays:
+  "everyone already has one" never settles a build. The case for one project moved out of
+  the file that holds what is true everywhere.
+- **`keystone` no longer claims to be active every response.** A skill acts only after it
+  loads; the kernel in `CLAUDE.md` is what acts every session.
 
 ### Removed
 
 - **Caveman mode.** It drops articles and small words, and STE requires them. The plugin
-  is off, and its two hooks and its status line are gone from `settings.json`.
+  is off, and its two hooks, its status line, its plugin entry and its marketplace are gone
+  from `settings.json`.
+- **Dead and one-project entries in `settings.json`.** The `dual-graph` MCP permissions
+  pointed at a server this config does not install. The `puminjak` directories belong in
+  that project's own settings. `uv --version` and `npx poops-images` each matched one past
+  command, which the README says stays out.
 
 ## [1.4.0] — 2026-08-04
 

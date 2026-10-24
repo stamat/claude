@@ -7,15 +7,10 @@
       "Bash(git mv *)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(npx poops-images)",
-      "Bash(uv --version)",
       "Bash(uv build *)",
       "Bash(uv run *)",
       "Read(//opt/homebrew/bin/**)",
       "Read(//private/tmp/**)",
-      "mcp__dual-graph__fallback_rg",
-      "mcp__dual-graph__graph_add_memory",
-      "mcp__dual-graph__graph_register_edit",
       "Bash(npm view *)",
       "Bash(npm ls *)",
       "Bash(gh pr view *)",
@@ -26,10 +21,6 @@
       "Bash(gh repo view *)",
       "Read(//Users/stamat/Sites/localhost/**)",
       "WebFetch(domain:stamat.info)"
-    ],
-    "additionalDirectories": [
-      "/Users/stamat/Sites/localhost/puminjak/app/Scrapers",
-      "/Users/stamat/Sites/localhost/puminjak/database/migrations"
     ]
   },
   "model": "opus[1m]",
@@ -204,16 +195,9 @@
   },
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true,
-    "caveman@caveman": false,
     "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
-    },
     "ponytail": {
       "source": {
         "source": "github",
