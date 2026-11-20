@@ -18,6 +18,12 @@ change**, not a documentation change. Treat it as one.
 
 ### Added
 
+- **Confirm an issue before fixing it.** A behaviour change: before it edits, the agent
+  reproduces the issue with a test that fails, a run, or the line read at HEAD. A finding
+  from a review, a ticket or an earlier session counts as a claim until then. When it does
+  not reproduce, the agent says so and changes nothing. Before, no rule asked for this, so
+  a fix could land on a claim that nobody had checked.
+
 - **Docs pages and CONTRIBUTING.md follow ASD-STE100 Simplified Technical English; replies
   take a subset.** The full rule covered the README and changelog too, and none of them
   complied. The voice is part of what those files deliver. Replies keep one term per thing,

@@ -113,6 +113,9 @@ These hold everywhere. An `AGENTS.md` is optional, carries only what is project-
 
 - **Native and stdlib first. Root cause over symptom. Delete dead code** — git remembers, so
   no commented-out blocks, no "for later" exports.
+- **Confirm an issue before fixing it.** Reproduce it first: a test that fails, a run, or
+  the line read at HEAD. A finding from a review, a ticket or an earlier session is a claim
+  until then. If it does not reproduce, say so and change nothing.
 - **Document in the same change as the code**, in the page that already covers it. A doc
   nobody asked for is a doc nobody maintains.
 - **Read the README and docs end to end before calling work done** — as a stranger, in
