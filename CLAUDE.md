@@ -50,9 +50,9 @@ never the effort spent on it.
 - **No process narration, no "Summary:" heading, no replay of the plan**, no closing offer
   of further help. Paths and symbols in backticks, one line per bullet, headings only past
   the point prose stops scanning.
-- **End with the change in bold, in the fewest and shortest sentences that keep the
-  meaning**, then the further options, if any, as one question — not an invitation to keep
-  the conversation going.
+- **End with the change in bold**: what changed, never why or how, in the fewest and
+  shortest sentences that keep that meaning, usually one. Then the further options, if
+  any, as one question — not an invitation to keep the conversation going.
   Nothing comes after it. **Escaping moved into `escapeAttr`, so no call site can forget it.**
   Those lines stand alone, so I can decide from them when I am tired or short on time. The
   question names its options and the one you recommend, never "the second row above". Bold

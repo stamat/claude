@@ -31,8 +31,8 @@ change**, not a documentation change. Treat it as one.
 
 ### Changed
 
-- **A reply ends with the change in bold, in the fewest and shortest sentences that keep
-  the meaning, then the further options as one question.** A
+- **A reply ends with the change in bold, then the further options as one question.** The
+  bold carries what changed, never why or how, usually in one sentence. A
   behaviour change: the change was the first line and is now the last, and nothing comes
   after the question. Those lines stand alone, and the question names its options and the
   recommended one, so a quick decision on an experiment needs no reading of the rest.
