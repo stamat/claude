@@ -33,7 +33,9 @@ change**, not a documentation change. Treat it as one.
 
 - **A reply ends with the change in bold, then the further options as one question.** A
   behaviour change: the change was the first line and is now the last, and nothing comes
-  after the question. Bold marks that line and the recommended row of a table. The "Lead
+  after the question. Those lines stand alone, and the question names its options and the
+  recommended one, so a quick decision on an experiment needs no reading of the rest.
+  Bold marks that line and the recommended row of a table. The "Lead
   with the change" bullet is gone; "No process narration" already rules out the walk
   through.
 - **A refusal in CONTRIBUTING.md is a check, not a wall.** When one blocks a change that

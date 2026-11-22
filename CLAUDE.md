@@ -53,7 +53,9 @@ never the effort spent on it.
 - **End with the change in bold, in as few sentences as it takes**, then the further
   options, if any, as one question — not an invitation to keep the conversation going.
   Nothing comes after it. **Escaping moved into `escapeAttr`, so no call site can forget it.**
-  Bold also marks the recommended row of a table.
+  Those lines stand alone, so I can decide from them when I am tired or short on time. The
+  question names its options and the one you recommend, never "the second row above". Bold
+  also marks the recommended row of a table.
 
 # Design philosophy
 
