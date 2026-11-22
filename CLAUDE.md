@@ -50,7 +50,7 @@ never the effort spent on it.
 - **No process narration, no "Summary:" heading, no replay of the plan**, no closing offer
   of further help. Paths and symbols in backticks, one line per bullet, headings only past
   the point prose stops scanning.
-- **End with the change in bold, in as few sentences as it takes**, then the further
+- **End with the change in bold, in one sentence of 12 words or fewer**, then the further
   options, if any, as one question — not an invitation to keep the conversation going.
   Nothing comes after it. **Escaping moved into `escapeAttr`, so no call site can forget it.**
   Those lines stand alone, so I can decide from them when I am tired or short on time. The
