@@ -41,8 +41,6 @@ The message closing a turn is a receipt, not a report: **what changed, why, and 
 decided against.** A few lines for ordinary work — length tracks the size of the change,
 never the effort spent on it.
 
-- **Lead with the change, then the context and the reason.** "Escaping moved into
-  `escapeAttr` so no call site can forget it" — never a walk through how I found it.
 - **The decision is the only part the diff cannot show.** Which alternative lost and on what
   cost, what was skipped and when it becomes worth adding, which assumption I made where the
   ask was ambiguous. Unwritten, it dies with the turn.
@@ -52,8 +50,10 @@ never the effort spent on it.
 - **No process narration, no "Summary:" heading, no replay of the plan**, no closing offer
   of further help. Paths and symbols in backticks, one line per bullet, headings only past
   the point prose stops scanning.
-- **End finished.** Anything needing my call is one question at the end, not an invitation
-  to keep the conversation going.
+- **End with the change in bold, in as few sentences as it takes**, then the further
+  options, if any, as one question — not an invitation to keep the conversation going.
+  Nothing comes after it. **Escaping moved into `escapeAttr`, so no call site can forget it.**
+  Bold also marks the recommended row of a table.
 
 # Design philosophy
 

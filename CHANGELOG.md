@@ -31,6 +31,11 @@ change**, not a documentation change. Treat it as one.
 
 ### Changed
 
+- **A reply ends with the change in bold, then the further options as one question.** A
+  behaviour change: the change was the first line and is now the last, and nothing comes
+  after the question. Bold marks that line and the recommended row of a table. The "Lead
+  with the change" bullet is gone; "No process narration" already rules out the walk
+  through.
 - **A refusal in CONTRIBUTING.md is a check, not a wall.** When one blocks a change that
   would benefit the project, the agent names it and proposes the edit instead of stopping.
 - **The README names what the config expects but does not carry** — the ponytail plugin,
